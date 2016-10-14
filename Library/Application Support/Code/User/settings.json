@@ -1,0 +1,11 @@
+// Place your settings in this file to overwrite the default settings
+{
+    "editor.fontSize": 12,
+    "editor.lineNumbers": "on",
+    "editor.fontFamily": "Inconsolata-g, Menlo",
+    "search.exclude": {
+        "**/*.log": true,
+        "**/tmp": true,
+        "**/.git": true
+    }
+}
