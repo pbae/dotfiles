@@ -1,0 +1,7 @@
+\pset pager off
+\pset null '(null)'
+\timing
+\x auto
+\set VERBOSITY verbose
+\set HISTFILE ~/.psql_history- :DBNAME
+
