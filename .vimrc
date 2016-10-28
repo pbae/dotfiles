@@ -32,6 +32,7 @@ set undolevels=1000
 set cursorline
 set whichwrap+=<,>,h,l,[,]
 set clipboard^=unnamed
+set iskeyword-=_
 
 map <C-n> :NERDTreeToggle<CR>
 let g:NERDSpaceDelims = 1

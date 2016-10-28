@@ -6,10 +6,9 @@ alias bashrc='vi ~/.bashrc'
 alias vimrc='vi ~/.vimrc'
 alias vrb='cd ~/temp && vi temp.rb'
 alias vi='/usr/local/bin/vim'
+alias db='psql -U wwdb -d wwdb_dev'
 export EDITOR='vim'
 set -o emacs
-
-#export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
 alias config="/usr/bin/git --git-dir=$HOME/.myconf/ --work-tree=$HOME"
 source $HOME/.secrets
