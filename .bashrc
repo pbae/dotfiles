@@ -4,12 +4,17 @@ alias tma='tmux -2 attach -t $1'
 alias tmk='tmux kill-session -t $1'
 alias bashrc='vi ~/.bashrc'
 alias vimrc='vi ~/.vimrc'
-alias vrb='cd ~/temp && vi temp.rb'
-alias vi='/usr/local/bin/vim'
+alias vi='/usr/bin/env vim'
 alias db='psql -U wwdb -d wwdb_dev'
+alias ll='ls -alrth'
+alias cp='cp -i'
+alias mv='mv -i'
+alias ..='cd ..'
+alias ...='cd ...'
+
 export EDITOR='vim'
 set -o emacs
 
-alias config="/usr/bin/git --git-dir=$HOME/.myconf/ --work-tree=$HOME"
 source $HOME/.secrets
 
+alias em='emacs -nw'
