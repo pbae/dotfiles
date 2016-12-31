@@ -22,8 +22,6 @@ set hlsearch
 set incsearch
 set nobackup
 set nowritebackup
-set backupdir=~/.vim/backup//
-set directory=~/.vim/swp//
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
 set history=1000
@@ -33,6 +31,7 @@ set cursorline
 set whichwrap+=<,>,h,l,[,]
 set clipboard^=unnamed
 set iskeyword-=_
+set title
 
 map <C-n> :NERDTreeToggle<CR>
 let g:NERDSpaceDelims = 1
@@ -44,7 +43,13 @@ nnoremap j gj
 nnoremap k gk
 nnoremap ; :
 
-"let g:slime_target="tmux"
+"This unsets the "last search pattern" register by hitting return
+nnoremap <CR> :noh<CR><CR>
+
+let g:slime_target="tmux"
+xmap <c-k><c-k> <Plug>SlimeRegionSend
+nmap <c-k><c-k> <Plug>SlimeParagraphSend
+nmap <c-k>v     <Plug>SlimeConfig
 
 autocmd Filetype ruby setlocal ts=2 sw=2 expandtab
 
