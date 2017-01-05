@@ -47,9 +47,9 @@ nnoremap ; :
 nnoremap <CR> :noh<CR><CR>
 
 let g:slime_target="tmux"
-xmap <c-k><c-k> <Plug>SlimeRegionSend
-nmap <c-k><c-k> <Plug>SlimeParagraphSend
-nmap <c-k>v     <Plug>SlimeConfig
+xmap <c-k> <Plug>SlimeRegionSend
+nmap <c-k> <Plug>SlimeLineSend
+"nmap <c-k>v     <Plug>SlimeConfig
 
 autocmd Filetype ruby setlocal ts=2 sw=2 expandtab
 
