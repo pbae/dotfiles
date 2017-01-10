@@ -43,8 +43,7 @@ nnoremap j gj
 nnoremap k gk
 nnoremap ; :
 
-"This unsets the "last search pattern" register by hitting return
-nnoremap <CR> :noh<CR>
+nnoremap <c-h> :noh<CR>
 
 let g:slime_target="tmux"
 xmap <c-k> <Plug>SlimeRegionSend
