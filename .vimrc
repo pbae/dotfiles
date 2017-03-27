@@ -42,6 +42,7 @@ inoremap jk <Esc>
 nnoremap j gj
 nnoremap k gk
 nnoremap ; :
+nnoremap ' ;
 
 nnoremap <c-h> :noh<CR>
 
