@@ -1,7 +1,7 @@
 set nocompatible
 
 execute pathogen#infect()
-syntax on
+syntax enable
 filetype plugin indent on
 
 let mapleader=","
@@ -11,8 +11,10 @@ set tabstop=4
 set softtabstop=4
 set shiftwidth=4
 set autoindent
-"set background=dark
-:colorscheme desert256
+set background=dark
+"let g:solarized_termcolors=256
+"colorscheme solarized
+colo pbae
 set number
 set numberwidth=1
 set mouse=a
@@ -30,26 +32,45 @@ set undolevels=1000
 set cursorline
 set whichwrap+=<,>,h,l,[,]
 set clipboard^=unnamed
-set iskeyword-=_
+" set iskeyword-=_
 set title
+set laststatus=2
+set noshowmode
+set nosol
 
-map <C-n> :NERDTreeToggle<CR>
-let g:NERDSpaceDelims = 1
+" set colorcolumn=120
 
 hi MatchParen ctermbg=55
+highlight Normal ctermbg=NONE
+"highlight nonText ctermbg=NONE
+
+map <leader><leader> <C-^>
+map <leader>a :Ack<space>
+map <leader>f :MRU<cr>
+map <leader>b :Gblame<cr>
 
 inoremap jk <Esc>
 nnoremap j gj
 nnoremap k gk
 nnoremap ; :
-nnoremap ' ;
+"nnoremap ' ;
 
 nnoremap <c-h> :noh<CR>
 
-let g:slime_target="tmux"
-xmap <c-k> <Plug>SlimeRegionSend
-nmap <c-k> <Plug>SlimeLineSend
+"let g:slime_target="tmux"
+"xmap <c-k> <Plug>SlimeRegionSend
+"nmap <c-k> <Plug>SlimeLineSend
 "nmap <c-k>v     <Plug>SlimeConfig
+
+let g:ctrlp_cmd='CtrlP :pwd'
+let g:ctrlp_max_files=0
+let g:ctrlp_max_depth=40
+
+let g:ftplugin_sql_omni_key = '<C-j>'
+
+let g:fzf_mru_ignore_patterns = 'fugitive\|\.git/\|\_^/tmp/' " default value
+
+"let g:ackprg = 'ag --vimgrep'
 
 autocmd Filetype ruby setlocal ts=2 sw=2 expandtab
 
@@ -69,3 +90,6 @@ inoremap <expr> <tab> InsertTabWrapper()
 inoremap <s-tab> <c-n>
 
 set hidden
+
+so ~/.private.vim
+
