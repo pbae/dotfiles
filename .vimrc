@@ -55,7 +55,8 @@ nnoremap k gk
 nnoremap ; :
 "nnoremap ' ;
 
-nnoremap <c-h> :noh<CR>
+"nnoremap <c-h> :noh<CR>
+nnoremap <cr> :noh<CR>
 
 "let g:slime_target="tmux"
 "xmap <c-k> <Plug>SlimeRegionSend
@@ -65,6 +66,7 @@ nnoremap <c-h> :noh<CR>
 let g:ctrlp_cmd='CtrlP :pwd'
 let g:ctrlp_max_files=0
 let g:ctrlp_max_depth=40
+let g:ctrlp_match_window = 'min:4,max:30'
 
 let g:ftplugin_sql_omni_key = '<C-j>'
 
