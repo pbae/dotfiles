@@ -14,7 +14,7 @@ set autoindent
 set background=dark
 "let g:solarized_termcolors=256
 "colorscheme solarized
-colo pbae
+colo seoul256
 set number
 set numberwidth=1
 set mouse=a
@@ -40,20 +40,33 @@ set nosol
 
 " set colorcolumn=120
 
+" fzf
+set rtp+=/usr/local/opt/fzf
+map <leader>z :FZF<cr>
+
 hi MatchParen ctermbg=55
 highlight Normal ctermbg=NONE
 "highlight nonText ctermbg=NONE
 
 map <leader><leader> <C-^>
+map <leader>w :w<cr>
 map <leader>a :Ack<space>
-map <leader>f :MRU<cr>
+map <leader>f :CtrlPMRU<cr>
 map <leader>b :Gblame<cr>
+
+" On paste, copy what you just pasted so that you can repeat
+xnoremap p pgvy
 
 inoremap jk <Esc>
 nnoremap j gj
 nnoremap k gk
 nnoremap ; :
 "nnoremap ' ;
+
+nnoremap <c-j> <c-w>j
+nnoremap <c-k> <c-w>k
+nnoremap <c-h> <c-w>h
+nnoremap <c-l> <c-w>l
 
 "nnoremap <c-h> :noh<CR>
 nnoremap <cr> :noh<CR>
@@ -63,18 +76,20 @@ nnoremap <cr> :noh<CR>
 "nmap <c-k> <Plug>SlimeLineSend
 "nmap <c-k>v     <Plug>SlimeConfig
 
-let g:ctrlp_cmd='CtrlP :pwd'
-let g:ctrlp_max_files=0
-let g:ctrlp_max_depth=40
-let g:ctrlp_match_window = 'min:4,max:30'
+"let g:ctrlp_cmd='CtrlP :pwd'
+"let g:ctrlp_max_files=0
+"let g:ctrlp_max_depth=40
+"let g:ctrlp_match_window = 'min:4,max:30'
 
 let g:ftplugin_sql_omni_key = '<C-j>'
 
-let g:fzf_mru_ignore_patterns = 'fugitive\|\.git/\|\_^/tmp/' " default value
+let g:python_highlight_all = 1
+
+"let g:fzf_mru_ignore_patterns = 'fugitive\|\.git/\|\_^/tmp/' " default value
 
 "let g:ackprg = 'ag --vimgrep'
 
-autocmd Filetype ruby setlocal ts=2 sw=2 expandtab
+"autocmd Filetype ruby setlocal ts=2 sw=2 expandtab
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " MULTIPURPOSE TAB KEY
