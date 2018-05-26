@@ -14,6 +14,7 @@ set autoindent
 set background=dark
 "let g:solarized_termcolors=256
 "colorscheme solarized
+"colo molokai
 colo seoul256
 set number
 set numberwidth=1
@@ -89,7 +90,7 @@ let g:python_highlight_all = 1
 
 "let g:ackprg = 'ag --vimgrep'
 
-"autocmd Filetype ruby setlocal ts=2 sw=2 expandtab
+autocmd Filetype ruby setlocal ts=2 sw=2 softtabstop=2 expandtab
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " MULTIPURPOSE TAB KEY
