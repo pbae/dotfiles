@@ -1,6 +1,18 @@
 set nocompatible
 
-execute pathogen#infect()
+call plug#begin('~/.vim/plugged')
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
+Plug 'junegunn/fzf.vim'
+Plug 'junegunn/seoul256.vim'
+Plug 'ntk148v/vim-horizon'
+"Plug 'ctrlpvim/ctrlp.vim'
+Plug 'tpope/vim-fugitive'
+Plug 'scrooloose/nerdcommenter'
+"Plug 'mileszs/ack.vim'
+"Plug 'vimwiki/vimwiki'
+call plug#end()
+
+"execute pathogen#infect()
 syntax enable
 filetype plugin indent on
 
@@ -10,12 +22,14 @@ set expandtab
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
+autocmd FileType cpp setlocal ts=2 sts=2 sw=2
 set autoindent
 set background=dark
 "let g:solarized_termcolors=256
 "colorscheme solarized
 "colo molokai
 colo seoul256
+"colo horizon
 set number
 set numberwidth=1
 set mouse=a
@@ -32,18 +46,27 @@ set undolevels=1000
 "set visualbell
 set cursorline
 set whichwrap+=<,>,h,l,[,]
+set wrap
 set clipboard^=unnamed
 " set iskeyword-=_
 set title
 set laststatus=2
 set noshowmode
 set nosol
+set ruler
 
-" set colorcolumn=120
+set colorcolumn=100
+
+set directory=~/.vim/swaps//
 
 " fzf
-set rtp+=/usr/local/opt/fzf
-map <leader>z :FZF<cr>
+"set rtp+=/usr/local/opt/fzf
+"map <leader>f :Files job_alerts<CR>
+map <leader>z :FZF<CR>
+map <leader>g :GFiles<CR>
+map <leader>f :Buffers<CR>
+map <leader>h :History<CR>
+map <leader>t :Tags<CR>
 
 hi MatchParen ctermbg=55
 highlight Normal ctermbg=NONE
@@ -51,9 +74,10 @@ highlight Normal ctermbg=NONE
 
 map <leader><leader> <C-^>
 map <leader>w :w<cr>
-map <leader>a :Ack<space>
-map <leader>f :CtrlPMRU<cr>
+map <leader>a :Ag<space>
+"map <leader>f :CtrlPMRU<cr>
 map <leader>b :Gblame<cr>
+map <leader>p oimport pdb; pdb.set_trace()<Esc>
 
 " On paste, copy what you just pasted so that you can repeat
 xnoremap p pgvy
@@ -72,6 +96,8 @@ nnoremap <c-l> <c-w>l
 "nnoremap <c-h> :noh<CR>
 nnoremap <cr> :noh<CR>
 
+command Bd bp\|bd \#
+
 "let g:slime_target="tmux"
 "xmap <c-k> <Plug>SlimeRegionSend
 "nmap <c-k> <Plug>SlimeLineSend
@@ -88,9 +114,13 @@ let g:python_highlight_all = 1
 
 "let g:fzf_mru_ignore_patterns = 'fugitive\|\.git/\|\_^/tmp/' " default value
 
+let g:ackprg = 'ag --nogroup --nocolor --column'
 "let g:ackprg = 'ag --vimgrep'
+"
+let g:fzf_history_dir = '~/.local/share/fzf-history'
 
 autocmd Filetype ruby setlocal ts=2 sw=2 softtabstop=2 expandtab
+autocmd Filetype html setlocal ts=2 sw=2 expandtab
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " MULTIPURPOSE TAB KEY
@@ -110,4 +140,3 @@ inoremap <s-tab> <c-n>
 set hidden
 
 so ~/.private.vim
-
