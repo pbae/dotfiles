@@ -138,5 +138,3 @@ inoremap <expr> <tab> InsertTabWrapper()
 inoremap <s-tab> <c-n>
 
 set hidden
-
-so ~/.private.vim
