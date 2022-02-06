@@ -1,9 +1,7 @@
-#!/bin/bash
+#!/bin/sh
 
-ln -si $(dirname $(realpath $0))/.vimrc $HOME
-ln -si $(dirname $(realpath $0))/.tmux.conf $HOME
-ln -si $(dirname $(realpath $0))/.psqlrc $HOME
-ln -si $(dirname $(realpath $0))/.zshrc $HOME
-ln -si $(dirname $(realpath $0))/.bashrc $HOME
-ln -si $(dirname $(realpath $0))/.gitconfig $HOME
+set -e
 
+ln -si $PWD/.vimrc $HOME
+ln -si $PWD/.gitconfig $HOME
+ln -si $PWD/.tmux.conf $HOME
