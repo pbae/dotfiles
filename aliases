@@ -1,0 +1,19 @@
+alias gg="git grep -n"
+alias p=python3
+alias wip="git add -u && git commit -m 'wip'"
+
+alias ll='ls -alrth'
+alias cp='cp -i'
+alias mv='mv -i'
+alias ..='cd ..'
+alias ...='cd ...'
+
+export EDITOR='vim'
+#set -o emacs
+
+alias tml='tmux list-sessions'
+alias tma='tmux -2 attach -t $1'
+alias tmk='tmux kill-session -t $1'
+
+#alias em='emacs -nw'
+#source /opt/homebrew/opt/powerlevel10k/powerlevel10k.zsh-theme
