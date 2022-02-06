@@ -1,15 +1,20 @@
 set nocompatible
 
 call plug#begin('~/.vim/plugged')
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
+"Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/seoul256.vim'
 Plug 'ntk148v/vim-horizon'
 "Plug 'ctrlpvim/ctrlp.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'scrooloose/nerdcommenter'
+Plug 'jonathanfilip/vim-lucius'
 "Plug 'mileszs/ack.vim'
 "Plug 'vimwiki/vimwiki'
+Plug 'dracula/vim', { 'as': 'dracula' }
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+Plug 'tpope/vim-surround'
 call plug#end()
 
 "execute pathogen#infect()
@@ -24,11 +29,14 @@ set softtabstop=4
 set shiftwidth=4
 autocmd FileType cpp setlocal ts=2 sts=2 sw=2
 set autoindent
-set background=dark
+"set background=dark
 "let g:solarized_termcolors=256
 "colorscheme solarized
 "colo molokai
-colo seoul256
+"colo seoul256
+colo lucius
+"let g:dracula_talic = 0
+"colo dracula
 "colo horizon
 set number
 set numberwidth=1
@@ -67,6 +75,7 @@ map <leader>g :GFiles<CR>
 map <leader>f :Buffers<CR>
 map <leader>h :History<CR>
 map <leader>t :Tags<CR>
+let g:fzf_preview_window = ['up:40%:hidden', 'ctrl-/']
 
 hi MatchParen ctermbg=55
 highlight Normal ctermbg=NONE
@@ -77,7 +86,7 @@ map <leader>w :w<cr>
 map <leader>a :Ag<space>
 "map <leader>f :CtrlPMRU<cr>
 map <leader>b :Gblame<cr>
-map <leader>p oimport pdb; pdb.set_trace()<Esc>
+map <leader>p obreakpoint()<Esc>
 
 " On paste, copy what you just pasted so that you can repeat
 xnoremap p pgvy
@@ -107,6 +116,9 @@ command Bd bp\|bd \#
 "let g:ctrlp_max_files=0
 "let g:ctrlp_max_depth=40
 "let g:ctrlp_match_window = 'min:4,max:30'
+
+" go
+let g:go_auto_type_info = 1
 
 let g:ftplugin_sql_omni_key = '<C-j>'
 
